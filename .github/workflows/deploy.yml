@@ -24,7 +24,41 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to FTP
+      # basic-ftp (used internally by this action) always connects in
+      # passive mode - there is no active-mode option to disable.
+      # dangerous-clean-slate is left at its default (false), so existing
+      # remote files are not wiped before upload.
+      #
+      # The action has no built-in retry, so failed attempts are retried
+      # by repeating the step up to 3 times, each gated on the previous
+      # attempt's outcome.
+      - name: Deploy to FTP (attempt 1)
+        id: ftp_attempt_1
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        continue-on-error: true
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DIR }}/
+          local-dir: ./out/
+          dangerous-clean-slate: false
+
+      - name: Deploy to FTP (attempt 2)
+        id: ftp_attempt_2
+        if: steps.ftp_attempt_1.outcome == 'failure'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        continue-on-error: true
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DIR }}/
+          local-dir: ./out/
+          dangerous-clean-slate: false
+
+      - name: Deploy to FTP (attempt 3)
+        if: steps.ftp_attempt_1.outcome == 'failure' && steps.ftp_attempt_2.outcome == 'failure'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -32,3 +66,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_DIR }}/
           local-dir: ./out/
+          dangerous-clean-slate: false
