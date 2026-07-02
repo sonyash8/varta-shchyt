@@ -1,4 +1,4 @@
-name: Deploy to FTP
+name: Deploy to SSH
 
 on:
   push:
@@ -24,46 +24,24 @@ jobs:
       - name: Build
         run: npm run build
 
-      # basic-ftp (used internally by this action) always connects in
-      # passive mode - there is no active-mode option to disable.
-      # dangerous-clean-slate is left at its default (false), so existing
-      # remote files are not wiped before upload.
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      # rsync without --delete never removes files that exist on the
+      # remote but not locally, so nothing gets wiped before upload.
+      # SSHPASS is read from the environment (sshpass -e) instead of
+      # a -p command-line argument so the password never shows up in
+      # the process list.
       #
-      # The action has no built-in retry, so failed attempts are retried
-      # by repeating the step up to 3 times, each gated on the previous
-      # attempt's outcome.
-      - name: Deploy to FTP (attempt 1)
-        id: ftp_attempt_1
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        continue-on-error: true
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_DIR }}/
-          local-dir: ./out/
-          dangerous-clean-slate: false
-
-      - name: Deploy to FTP (attempt 2)
-        id: ftp_attempt_2
-        if: steps.ftp_attempt_1.outcome == 'failure'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        continue-on-error: true
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_DIR }}/
-          local-dir: ./out/
-          dangerous-clean-slate: false
-
-      - name: Deploy to FTP (attempt 3)
-        if: steps.ftp_attempt_1.outcome == 'failure' && steps.ftp_attempt_2.outcome == 'failure'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_DIR }}/
-          local-dir: ./out/
-          dangerous-clean-slate: false
+      # REMOTE_PATH defaults to "html/" (ADM.Tools' web root for a
+      # domain connected as the account's primary domain). If your
+      # site's document root is different, add an SSH_REMOTE_PATH
+      # repository secret to override it.
+      - name: Deploy via rsync over SSH
+        env:
+          SSHPASS: ${{ secrets.SSH_PASSWORD }}
+          REMOTE_PATH: ${{ secrets.SSH_REMOTE_PATH }}
+        run: |
+          rsync -avz --no-owner --no-group \
+            -e "sshpass -e ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
+            out/ "${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:${REMOTE_PATH:-html/}"
