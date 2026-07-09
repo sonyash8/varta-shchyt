@@ -16,6 +16,7 @@ export default function ContactsTitle() {
   const ptRef     = useRef<P[]>([]);
   const mouse     = useRef({ x: -9999, y: -9999 });
   const raf       = useRef<number>(0);
+  const sizeRef   = useRef({ W: 0, H: 0 });
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -37,6 +38,7 @@ export default function ContactsTitle() {
 
       ctx.font = FONT;
       const W = Math.max(...LINES.map(l => ctx.measureText(l).width)) + PAD * 2;
+      sizeRef.current = { W, H };
 
       canvas.width        = Math.round(W * dpr);
       canvas.height       = Math.round(H * dpr);
@@ -115,7 +117,14 @@ export default function ContactsTitle() {
         style={{ display: "block", cursor: "default" }}
         onMouseMove={(e) => {
           const r = canvasRef.current?.getBoundingClientRect();
-          if (r) mouse.current = { x: e.clientX - r.left, y: e.clientY - r.top };
+          if (!r) return;
+          const { W, H } = sizeRef.current;
+          const scaleX = W && r.width ? W / r.width : 1;
+          const scaleY = H && r.height ? H / r.height : 1;
+          mouse.current = {
+            x: (e.clientX - r.left) * scaleX,
+            y: (e.clientY - r.top) * scaleY,
+          };
         }}
         onMouseLeave={() => { mouse.current = { x: -9999, y: -9999 }; }}
       />
