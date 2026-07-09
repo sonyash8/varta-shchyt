@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function PhysicalPage() {
+export default function AiProtectionPage() {
   return (
     <>
       <section className="rsp-svc-section" style={{ padding: "100px 40px 72px" }}>
@@ -11,20 +11,20 @@ export default function PhysicalPage() {
           <div>
             <div className="svc-title-wrap" style={{ marginBottom: "24px" }}>
               <div className="svc-icon-row" style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "36px" }}>
-                <Image src="/assets/home/svc-physical.png" alt="" width={52} height={52} style={{ objectFit: "contain" }} />
+                <Image src="/assets/home/icon-ai-protection.png" alt="" width={35} height={44} style={{ objectFit: "contain" }} />
                 <div style={{ flex: 1, height: "1px", background: "rgba(245,166,35,0.5)" }} />
               </div>
               <h1 className="svc-h1" style={{ fontFamily: "Montserrat,sans-serif", fontSize: "36px", fontWeight: 900, textTransform: "uppercase", color: "#fff", marginBottom: "0" }}>
-                ФІЗИЧНА ОХОРОНА
+                ВИКОРИСТАННЯ ШІ ДЛЯ ЗАХИСТУ
               </h1>
             </div>
 
             <div style={{ marginBottom: "36px" }}>
               <h2 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "14px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "12px", lineHeight: 1.4 }}>
-                ЗАХИСТ ОБ'ЄКТІВ<br />ТА КОНТРОЛЬ БЕЗПЕКИ
+                РОЗУМНИЙ АНАЛІЗ ЗАГРОЗ<br />У РЕАЛЬНОМУ ЧАСІ
               </h2>
               <p style={{ fontSize: "13px", color: "#aaa", lineHeight: 1.75 }}>
-                Організовуємо фізичну охорону для бізнесу, підприємств, складів, будівельних майданчиків, житлових комплексів та приватних об'єктів. Забезпечуємо пропускний режим, контроль території, безпеку персоналу й захист майна.
+                Впроваджуємо штучний інтелект у системи відеоспостереження та сигналізації, щоб об'єкт розпізнавав підозрілу активність і реагував швидше, ніж людина встигне переглянути записи.
               </p>
             </div>
 
@@ -33,10 +33,10 @@ export default function PhysicalPage() {
                 ПРО ПОСЛУГУ
               </h3>
               <p style={{ fontSize: "13px", color: "#aaa", lineHeight: 1.75, marginBottom: "12px" }}>
-                Фізична охорона потрібна там, де важлива постійна присутність спеціалістів, швидке реагування та контроль ситуації на місці.
+                ШІ-аналітика аналізує відеопотік у реальному часі: розпізнає людей і транспорт, помічає проникнення на територію, залишені предмети або скупчення людей — і одразу надсилає сповіщення.
               </p>
               <p style={{ fontSize: "13px", color: "#aaa", lineHeight: 1.75 }}>
-                Охоронці допомагають запобігти проникненню сторонніх осіб, порушенням пропускного режиму, спробам крадіжок, конфліктним ситуаціям та іншим ризикам для об'єкта. Такий формат захисту особливо ефективний у поєднанні з відеоспостереженням, сигналізацією та системами контролю доступу.
+                Це суттєво знижує кількість хибних тривог і дозволяє реагувати на реальну загрозу за лічені секунди, а не витрачати час на перегляд годин запису.
               </p>
             </div>
 
@@ -46,11 +46,11 @@ export default function PhysicalPage() {
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
                 {[
-                  { title: "Аналіз об'єкта",            desc: "Оцінюємо територію, можливі ризики, режим роботи, кількість входів, персоналу та транспорту." },
-                  { title: "Організація постів охорони", desc: "Визначаємо оптимальну кількість постів і зони відповідальності для кожного охоронця." },
-                  { title: "Контроль доступу",           desc: "Забезпечуємо пропускний режим для працівників, відвідувачів і автотранспорту." },
-                  { title: "Патрулювання території",     desc: "Проводимо планові та позапланові обходи для контролю порядку й виявлення порушень." },
-                  { title: "Реагування на інциденти",    desc: "Діємо за інструкціями у випадку тривоги, конфліктів, пожежі, спроб проникнення або інших нестандартних ситуацій." },
+                  { title: "Аудит поточної системи",  desc: "Оцінюємо, чи підтримує наявне обладнання підключення ШІ-аналітики." },
+                  { title: "Підбір рішення",           desc: "Обираємо алгоритми розпізнавання під конкретні задачі об'єкта." },
+                  { title: "Налаштування розпізнавання", desc: "Задаємо, що саме система має відрізняти: людину, авто, залишений предмет тощо." },
+                  { title: "Інтеграція зі сповіщеннями", desc: "Підключаємо миттєві сповіщення відповідальним особам при виявленні загрози." },
+                  { title: "Тестування та навчання",  desc: "Перевіряємо точність розпізнавання і зменшуємо кількість хибних спрацювань." },
                 ].map(item => (
                   <div key={item.title}>
                     <div style={{ fontSize: "13px", fontWeight: 700, color: "#ccc", fontFamily: "Montserrat,sans-serif", marginBottom: "2px" }}>{item.title}</div>
@@ -62,15 +62,14 @@ export default function PhysicalPage() {
 
             <div style={{ marginBottom: "36px" }}>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "16px" }}>
-                ДЛЯ ЯКИХ ОБ'ЄКТІВ
+                МОЖЛИВОСТІ СИСТЕМИ
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
                 {[
-                  { title: "Бізнес-центри та офіси",          desc: "Контроль входу, відвідувачів, персоналу та внутрішнього порядку." },
-                  { title: "Склади й підприємства",           desc: "Захист матеріальних цінностей, території, техніки та виробничих зон." },
-                  { title: "Будівельні майданчики",           desc: "Охорона обладнання, матеріалів і контроль доступу на територію." },
-                  { title: "Житлові комплекси та приватні об'єкти", desc: "Безпека мешканців, майна, в'їздів, паркінгів і прилеглої території." },
-                  { title: "Магазини та торгові об'єкти",     desc: "Запобігання крадіжкам, контроль порядку й оперативне реагування на ситуації." },
+                  { title: "Розпізнавання людей і авто", desc: "Точне відрізнення реальної загрози від сторонніх спрацювань." },
+                  { title: "Виявлення проникнення",      desc: "Автоматичне сповіщення при перетині заданої зони чи периметра." },
+                  { title: "Аналіз нетипової поведінки", desc: "Виявлення скупчень людей, залишених предметів чи підозрілих дій." },
+                  { title: "Менше хибних тривог",        desc: "ШІ фільтрує неважливі спрацювання і залишає тільки реальні загрози." },
                 ].map(item => (
                   <div key={item.title}>
                     <div style={{ fontSize: "13px", fontWeight: 700, color: "#ccc", fontFamily: "Montserrat,sans-serif", marginBottom: "2px" }}>{item.title}</div>
@@ -86,11 +85,10 @@ export default function PhysicalPage() {
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
                 {[
-                  { title: "Комплексний підхід",        desc: "Враховуємо особливості об'єкта, рівень ризиків і потрібний формат охорони." },
-                  { title: "Підготовлений персонал",    desc: "Підбираємо охоронців відповідно до задач об'єкта та режиму роботи." },
-                  { title: "Чіткі інструкції",          desc: "Розробляємо порядок дій для охорони у стандартних і нестандартних ситуаціях." },
-                  { title: "Контроль якості",           desc: "Здійснюємо перевірку роботи охорони та підтримуємо постійний зв'язок з об'єктом." },
-                  { title: "Інтеграція з технічними системами", desc: "За потреби поєднуємо фізичну охорону з відеоспостереженням, сигналізацією та контролем доступу." },
+                  { title: "Сучасні технології",   desc: "Впроваджуємо ШІ-рішення поряд із класичною охороною, а не замість неї." },
+                  { title: "Швидша реакція",        desc: "Скорочуємо час від події до сповіщення відповідальної особи." },
+                  { title: "Гнучке налаштування",   desc: "Адаптуємо алгоритми під особливості конкретного об'єкта." },
+                  { title: "Комплексний підхід",    desc: "Поєднуємо ШІ-аналітику з фізичною охороною та реагуванням." },
                 ].map(item => (
                   <div key={item.title}>
                     <div style={{ fontSize: "13px", fontWeight: 700, color: "#ccc", fontFamily: "Montserrat,sans-serif", marginBottom: "2px" }}>{item.title}</div>
@@ -113,8 +111,8 @@ export default function PhysicalPage() {
           <div data-reveal="right" className="rsp-svc-sticky" style={{ position: "sticky", top: "120px" }}>
             <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(245,166,35,0.2)" }}>
               <Image
-                src="/assets/home/svc-physical-hero.png"
-                alt="Фізична охорона"
+                src="/assets/home/services-hero.png"
+                alt="Використання ШІ для захисту"
                 width={600}
                 height={480}
                 style={{ objectFit: "cover", width: "100%", height: "auto", display: "block" }}

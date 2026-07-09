@@ -2,11 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const MAIN_SERVICES = [
-  { icon: "/assets/home/svc-video.png",   title: "Відеоспостереження",          desc: "Системи відеоконтролю для нагляду за об'єктом і фіксації подій.",          w: 58, h: 58, href: "/services/video" },
-  { icon: "/assets/home/svc-infosec.png", title: "Захист інформації",           desc: "Технічний захист даних, аудит безпеки та запобігання витоку інформації.",  w: 46, h: 46, href: "/services/infosec" },
-  { icon: "/assets/home/svc-fire.png",    title: "Охоронно-пожежна сигналізація", desc: "Виявлення загроз і миттєве сповіщення про небезпеку.",                   w: 58, h: 58, href: "/services/fire" },
-  { icon: "/assets/home/svc-access.png",  title: "Системи контролю доступу",    desc: "Обмеження доступу, облік робочого часу та контроль відвідувачів.",         w: 58, h: 58, href: "/services/access" },
-  { icon: "/assets/home/svc-smart.png",   title: "Розумний дім",                desc: "Інтеграція систем безпеки та комфортне керування будинком.",                w: 58, h: 58, href: "/services/smart" },
+  { icon: "/assets/home/svc-video.png",    title: "Відеоспостереження",              desc: "Системи відеоконтролю для нагляду за об'єктом і фіксації подій.",             w: 58, h: 58, href: "/services/video" },
+  { icon: "/assets/home/svc-access.png",   title: "Системи контролю доступу (СКД)",  desc: "Обмеження доступу, облік робочого часу та контроль відвідувачів.",            w: 58, h: 58, href: "/services/access" },
+  { icon: "/assets/home/icon-solution.png", title: "Структуровані кабельні системи (СКС)", desc: "Проєктування та монтаж кабельної інфраструктури для систем безпеки.", w: 46, h: 46, href: "/services/scs" },
+  { icon: "/assets/home/svc-infosec.png",  title: "Захист інформації — пошук жучків", desc: "Пошук прихованих мікрофонів, камер і GPS-маячків, аудит безпеки даних.",       w: 46, h: 46, href: "/services/infosec" },
+  { icon: "/assets/home/svc-fire.png",     title: "Охоронно-пожежна сигналізація",   desc: "Виявлення загроз і миттєве сповіщення про небезпеку.",                        w: 58, h: 58, href: "/services/fire" },
+  { icon: "/assets/home/icon-fast.png",    title: "Автоматизовані системи управління", desc: "Автоматика керує замість Вас — охорона, доступ і клімат за сценарієм.",       w: 54, h: 54, href: "/services/automation" },
+  { icon: "/assets/home/icon-ai-protection.png", title: "Використання ШІ для захисту", desc: "Розумний аналіз відео та миттєві сповіщення про реальні загрози.",           w: 46, h: 58, href: "/services/ai-protection" },
 ];
 
 const PHYSICAL = [
@@ -37,7 +39,6 @@ export default function ServicesPage() {
           { src: "/assets/home/svc-video.png",    top: "12%",  right: "28%", size: 38, cls: "float-a" },
           { src: "/assets/home/svc-access.png",   top: "55%",  right: "18%", size: 34, cls: "float-b" },
           { src: "/assets/home/svc-fire.png",     top: "22%",  right: "10%", size: 36, cls: "float-c" },
-          { src: "/assets/home/svc-smart.png",    top: "70%",  right: "34%", size: 32, cls: "float-a" },
           { src: "/assets/home/svc-cargo.png",    top: "38%",  right: "6%",  size: 40, cls: "float-b" },
           { src: "/assets/home/svc-physical.png", top: "80%",  right: "14%", size: 34, cls: "float-c" },
           { src: "/assets/home/svc-infosec.png",  top: "8%",   right: "46%", size: 30, cls: "float-b" },
@@ -88,23 +89,22 @@ export default function ServicesPage() {
           <h2 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "32px", fontWeight: 800, textTransform: "uppercase", color: "#fff" }}>ОСНОВНІ ПОСЛУГИ</h2>
         </div>
 
-        <div className="rsp-5cards" style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: "16px" }}>
+        <div className="rsp-5cards" style={{ display: "grid", gridTemplateColumns: "repeat(8,1fr)", gap: "16px" }}>
           {MAIN_SERVICES.map((svc, i) => (
-            <div
+            <Link
               key={svc.title}
+              href={svc.href}
               data-reveal
               data-delay={String(i + 1)}
-              style={{ background: "#0e0e0e", border: "1px solid rgba(245,166,35,0.35)", borderRadius: "20px", padding: "32px 20px 28px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", justifyContent: "space-between" }}
+              className="svc-plain-card"
+              style={{ gridColumn: i === 4 ? "2 / span 2" : "span 2", background: "#0e0e0e", border: "1px solid rgba(245,166,35,0.35)", borderRadius: "20px", padding: "32px 20px 28px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", justifyContent: "space-between", textDecoration: "none" }}
             >
               <div style={{ height: "70px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "18px" }}>
                 <Image src={svc.icon} alt={svc.title} width={svc.w} height={svc.h} style={{ objectFit: "contain" }} />
               </div>
               <h4 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "14px", fontWeight: 700, color: "#fff", lineHeight: 1.3, marginBottom: "10px" }}>{svc.title}</h4>
-              <p style={{ fontSize: "12px", color: "#888", lineHeight: 1.6, marginBottom: "16px" }}>{svc.desc}</p>
-              <Link href={svc.href} className="btn-hover" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "1px solid #555", borderRadius: "50%", width: "34px", height: "34px", fontSize: "16px", color: "#F5A623", textDecoration: "none", marginTop: "auto" }}>
-                →
-              </Link>
-            </div>
+              <p style={{ fontSize: "12px", color: "#888", lineHeight: 1.6 }}>{svc.desc}</p>
+            </Link>
           ))}
         </div>
       </section>
@@ -135,7 +135,7 @@ export default function ServicesPage() {
           <div className="rsp-physical" style={{ display: "flex", alignItems: "stretch" }}>
             {PHYSICAL.map((svc, i) => (
               <div key={svc.title} style={{ display: "contents" }}>
-                <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "10px", padding: "20px 24px" }}>
+                <Link href="/services/physical" className="svc-bottom-underline" style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "10px", padding: "20px 24px", textDecoration: "none", borderRadius: "16px", position: "relative" }}>
                   <div style={{ width: "56px", height: "56px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <Image src={svc.icon} alt={svc.title} width={svc.w} height={svc.h} style={{ objectFit: "contain" }} />
                   </div>
@@ -143,10 +143,7 @@ export default function ServicesPage() {
                     <h4 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "15px", fontWeight: 700, color: "#fff", marginBottom: "8px" }}>{svc.title}</h4>
                     <p style={{ fontSize: "13px", color: "#666", lineHeight: 1.65 }}>{svc.desc}</p>
                   </div>
-                  <Link href="/services/physical" className="btn-hover" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", border: "1px solid #555", borderRadius: "50%", width: "34px", height: "34px", fontSize: "16px", color: "#F5A623", textDecoration: "none" }}>
-                    →
-                  </Link>
-                </div>
+                </Link>
                 {i < PHYSICAL.length - 1 && (
                   <div className="rsp-hide" style={{ width: "1px", background: "rgba(245,166,35,0.4)", flexShrink: 0 }} />
                 )}

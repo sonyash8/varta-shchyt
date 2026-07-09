@@ -252,6 +252,7 @@ textarea::placeholder {
     gap: 12px !important;
   }
   .rsp-5cards > * {
+    grid-column: span 1 !important;
     height: 340px !important;
     overflow: hidden !important;
     justify-content: flex-start !important;
@@ -463,22 +464,64 @@ textarea::placeholder {
 .footer-link {
   display: inline-block;
   position: relative;
+  text-decoration: none !important;
+  text-underline-offset: 4px;
   transition: color 0.22s ease, transform 0.22s ease;
 }
-.footer-link::after {
+.footer-link:hover {
+  color: #F5A623 !important;
+  transform: translateX(5px);
+  text-decoration: underline !important;
+  text-decoration-color: #F5A623 !important;
+}
+
+/* Service cards — золотий контур підсвічується при наведенні */
+.svc-card {
+  transition: background 0.35s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease;
+}
+.svc-card > div {
+  transition: background 0.35s ease;
+}
+.svc-card:hover {
+  background: rgba(245, 166, 35, 0.95) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(245, 166, 35, 0.12);
+}
+.svc-card:hover > div {
+  background: linear-gradient(to top, rgba(245,166,35,0.12) 0%, transparent 18%), #141414 !important;
+}
+
+/* Navbar "Послуги" dropdown */
+.nav-dropdown-link {
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.nav-dropdown-link:hover {
+  background: rgba(245, 166, 35, 0.12);
+  color: #F5A623 !important;
+}
+
+/* Каталог послуг — легка анімація при наведенні на картку */
+.svc-plain-card {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.svc-plain-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 166, 35, 0.9) !important;
+  box-shadow: 0 10px 24px rgba(245, 166, 35, 0.12);
+}
+
+/* Фізична охорона — тільки лінія знизу при наведенні */
+.svc-bottom-underline::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 1px;
   background: #F5A623;
   transition: width 0.28s ease;
 }
-.footer-link:hover {
-  color: #F5A623 !important;
-  transform: translateX(5px);
-}
-.footer-link:hover::after {
-  width: 100%;
+.svc-bottom-underline:hover::after {
+  width: 60%;
 }

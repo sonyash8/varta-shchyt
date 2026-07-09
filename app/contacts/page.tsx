@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useState } from "react";
 import ContactsTitle from "@/components/ContactsTitle";
 
-const FORMSPREE_ID = "mykqjglb";
+const FORMSPREE_ID = "mzdllpnj";
 
 const QUICK = [
   { icon: "/assets/home/icon-consult.png",  title: "Консультація",       desc: "Безкоштовна консультація наших експертів з безпеки.",   w: 40 },
   { icon: "/assets/home/icon-solution.png", title: "Підбір рішення",     desc: "Підберемо оптимальне рішення під ваші потреби та бюджет.", w: 36 },
   { icon: "/assets/home/icon-fast.png",     title: "Оперативний зв'язок", desc: "Швидка реакція та оперативна обробка ваших запитів.",  w: 40 },
-  { icon: "/assets/home/icon-247-orange.png", title: "24/7 підтримка",     desc: "Ми на зв'язку цілодобово, 7 днів на тиждень.",          w: 40 },
+  { icon: "/assets/home/icon-ai-protection.png", title: "Конфіденційність", desc: "Ваші дані та звернення захищені й не передаються третім особам.", w: 33 },
 ];
 
 export default function ContactsPage() {
@@ -175,7 +175,7 @@ export default function ContactsPage() {
           {/* Map iframe */}
           <div style={{ position: "relative", minHeight: "320px" }}>
             <iframe
-              src="https://maps.google.com/maps?q=%D0%B2%D1%83%D0%BB.+%D0%84%D0%B2%D0%B3%D0%B5%D0%BD%D0%B0+%D0%9A%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%BB%D1%8C%D1%86%D1%8F%2C+18%2C+%D0%9A%D0%B8%D1%97%D0%B2&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=%D0%B2%D1%83%D0%BB.%20%D0%97%D0%BE%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%B0%2C%204-%D0%B0%2C%20%D0%9A%D0%B8%D1%97%D0%B2&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0, display: "block", minHeight: "320px", filter: "grayscale(0.3) invert(0.85) hue-rotate(180deg) brightness(0.85) contrast(0.9)" }}
@@ -189,20 +189,20 @@ export default function ContactsPage() {
           <div className="rsp-map-addr" style={{ padding: "40px 36px", borderLeft: "1px solid rgba(245,166,35,0.15)", display: "flex", flexDirection: "column", gap: "28px", justifyContent: "center" }}>
             <div>
               <div style={{ fontSize: "13px", letterSpacing: "2px", color: "#F5A623", fontFamily: "Montserrat,sans-serif", textTransform: "uppercase", marginBottom: "8px", fontWeight: 700 }}>АДРЕСА</div>
-              <p style={{ fontSize: "12px", color: "#ccc", lineHeight: 1.6 }}>м. Київ,<br />вул. Євгена Коновальця, 18</p>
+              <p style={{ fontSize: "12px", color: "#ccc", lineHeight: 1.6 }}>04119, м. Київ,<br />вул. Зоологічна, буд. 4-а, оф. 139/2</p>
             </div>
             <div>
               <div style={{ fontSize: "13px", letterSpacing: "2px", color: "#F5A623", fontFamily: "Montserrat,sans-serif", textTransform: "uppercase", marginBottom: "8px", fontWeight: 700 }}>ТЕЛЕФОНИ</div>
-              <a href="tel:+380674250404" style={{ display: "block", fontSize: "15px", color: "#ccc", textDecoration: "none", marginBottom: "6px" }}>+38 (067) 425-04-04</a>
-              <a href="tel:+380504250404" style={{ display: "block", fontSize: "15px", color: "#ccc", textDecoration: "none" }}>+38 (050) 425-04-04</a>
+              <a href="tel:+380677778510" style={{ display: "block", fontSize: "15px", color: "#ccc", textDecoration: "none", marginBottom: "6px" }}>+38 (067) 777-85-10</a>
+              <a href="tel:+380507778511" style={{ display: "block", fontSize: "15px", color: "#ccc", textDecoration: "none" }}>+38 (050) 777-85-11</a>
             </div>
             <div>
               <div style={{ fontSize: "13px", letterSpacing: "2px", color: "#F5A623", fontFamily: "Montserrat,sans-serif", textTransform: "uppercase", marginBottom: "8px", fontWeight: 700 }}>EMAIL</div>
-              <a href="mailto:varta-shchyt@ukr.net" style={{ fontSize: "15px", color: "#ccc", textDecoration: "none" }}>varta-shchyt@ukr.net</a>
+              <a href="mailto:vartasecurity@gmail.com" style={{ fontSize: "15px", color: "#ccc", textDecoration: "none" }}>vartasecurity@gmail.com</a>
             </div>
             <div>
               <div style={{ fontSize: "13px", letterSpacing: "2px", color: "#F5A623", fontFamily: "Montserrat,sans-serif", textTransform: "uppercase", marginBottom: "8px", fontWeight: 700 }}>ГРАФІК РОБОТИ</div>
-              <p style={{ fontSize: "15px", color: "#ccc", lineHeight: 1.6 }}><span style={{ fontSize: "12px" }}>Пн – Нд</span><br />08:00 – 24:00</p>
+              <p style={{ fontSize: "15px", color: "#ccc", lineHeight: 1.6 }}><span style={{ fontSize: "12px" }}>Пн – Нд</span><br />08:00 – 20:00</p>
             </div>
           </div>
         </div>
@@ -223,7 +223,7 @@ export default function ContactsPage() {
             <p style={{ fontSize: "14px", color: "#666", marginBottom: "0" }}>Наші фахівці нададуть безкоштовну консультацію та підберуть оптимальне рішення.</p>
           </div>
           <a
-            href="tel:+380674250404"
+            href="tel:+380677778510"
             className="btn-gold-hover"
             style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#F5A623", color: "#000", fontFamily: "Montserrat,sans-serif", fontWeight: 700, fontSize: "12px", letterSpacing: "1px", padding: "14px 32px", borderRadius: "12px", textDecoration: "none", flexShrink: 0 }}
           >

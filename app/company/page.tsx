@@ -5,7 +5,6 @@ import Link from "next/link";
 const ADVANTAGES = [
   { num: "15+", label: "років досвіду" },
   { num: "500+", label: "задоволених клієнтів" },
-  { num: "24/7", label: "цілодобовий моніторинг" },
   { num: "100%", label: "конфіденційність" },
 ];
 
@@ -40,8 +39,7 @@ export default function CompanyPage() {
           </h1>
           <div className="hero-desc" style={{ fontSize: "15px", color: "#ccc", lineHeight: 1.75, marginBottom: "32px", maxWidth: "520px" }}>
             <p style={{ marginBottom: "12px" }}>Ми професійна та ефективна компанія, на чолі якої стоять люди з колосальним досвідом роботи у сфері безпеки.</p>
-            <p style={{ marginBottom: "12px" }}>Наша охоронна фірма працює з такими організаціями, як: Ян Дженерал, Укрвторчермет, Українська фруктова компанія, Дитячий оздоровчий комплекс СЛАВУТИЧ та інші.</p>
-            <p>І всі вони серед усього списку охоронних компаній Києва зупинили свій вибір на «Варта-Щит Україна».</p>
+            <p>Підбираємо рішення індивідуально під кожен об'єкт — від невеликого офісу до масштабного підприємства — і відповідаємо за результат на всіх етапах співпраці.</p>
           </div>
           <div className="hero-cta" style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
             <Link
@@ -69,7 +67,7 @@ export default function CompanyPage() {
           className="rsp-2col company-about-card"
           style={{ background: "#141414", border: "1px solid #F5A623", borderRadius: "20px", padding: "48px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", alignItems: "start", boxShadow: "0 0 40px rgba(245,166,35,0.18), 0 0 80px rgba(245,166,35,0.07)" }}
         >
-          <div>
+          <div style={{ alignSelf: "center" }}>
             <h2 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "28px", fontWeight: 800, textTransform: "uppercase", lineHeight: 1.2, marginBottom: "20px" }}>
               ВАШ СПОКІЙ —<br /><span style={{ color: "#F5A623" }}>НАША ВІДПОВІДАЛЬНІСТЬ</span>
             </h2>
@@ -83,7 +81,7 @@ export default function CompanyPage() {
           <div>
             <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "14px", fontWeight: 700, letterSpacing: "2px", color: "#F5A623", textTransform: "uppercase", marginBottom: "20px" }}>ЩО МИ ЗАБЕЗПЕЧУЄМО</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-              {["Відеоспостереження", "Захист інформації", "Охоронно-пожежна сигналізація", "Системи контролю доступу", "Розумний дім"].map((item) => (
+              {["Відеоспостереження", "СКД", "СКС", "Захист інформації", "Охоронно-пожежна сигналізація", "Автоматизовані системи управління", "Використання ШІ для захисту"].map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "14px", color: "#ccc" }}>
                   <span style={{ color: "#F5A623", fontFamily: "monospace" }}>├</span>
                   {item}
@@ -107,7 +105,7 @@ export default function CompanyPage() {
       </section>
 
       {/* ── ADVANTAGES ── */}
-      <section className="rsp-stats" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", padding: "56px 40px", borderTop: "1px solid #1e1e1e", borderBottom: "1px solid #1e1e1e", background: "#0d0d0d", textAlign: "center" }}>
+      <section className="rsp-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", padding: "56px 40px", borderTop: "1px solid #1e1e1e", borderBottom: "1px solid #1e1e1e", background: "#0d0d0d", textAlign: "center" }}>
         {ADVANTAGES.map((a, i) => (
           <div key={a.num} data-reveal data-delay={String(i + 1)}>
             <div className="stat-num" style={{ fontFamily: "Montserrat,sans-serif", fontSize: "52px", fontWeight: 900, color: "#F5A623", lineHeight: 1 }}>{a.num}</div>
@@ -127,28 +125,121 @@ export default function CompanyPage() {
           <h2 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "32px", fontWeight: 800, textTransform: "uppercase", color: "#fff" }}>ОСНОВНІ ПОСЛУГИ</h2>
         </div>
 
-        <div className="rsp-4cards" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "20px" }}>
-          {[
-            { icon: "/assets/home/icon-cctv-cam.png", title: "Відеоспостереження", desc: "Системи відеоконтролю для вашої безпеки.",        w: 83,  h: 56 },
-            { icon: "/assets/home/icon-access.png",   title: "Контроль доступу",   desc: "Облік і контроль доступу персоналу та відвідувачів.", w: 68,  h: 81 },
-            { icon: "/assets/home/icon-rapid.png",    title: "Групи швидкого реагування", desc: "Оперативне реагування на тривожні сигнали.", w: 115, h: 71 },
-            { icon: "/assets/home/icon-fire.png",     title: "Пожежна безпека",    desc: "Системи пожежної сигналізації та оповіщення.",   w: 62,  h: 74 },
-          ].map((svc, i) => (
-            <div
-              key={svc.title}
-              data-reveal
-              data-delay={String(i + 1)}
-              style={{ background: "#0e0e0e", border: "1px solid rgba(245,166,35,0.35)", borderRadius: "20px", padding: "36px 24px 32px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}
-            >
-              <div style={{ height: "100px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
-                <Image src={svc.icon} alt={svc.title} width={svc.w} height={svc.h} style={{ objectFit: "contain" }} />
+        {(() => {
+          const cutPolygon = "polygon(0 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%)";
+          const cutPolygonBoth = "polygon(0 26px, 26px 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%)";
+          const outerStyle: import("react").CSSProperties = {
+            position: "relative",
+            display: "flex",
+            background: "rgba(245,166,35,0.65)",
+            clipPath: cutPolygon,
+            borderRadius: "20px",
+            padding: "1px",
+            boxShadow: "0 8px 30px rgba(245,166,35,0.08)",
+            minHeight: "220px",
+          };
+          const innerStyle: import("react").CSSProperties = {
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            gap: "18px",
+            padding: "56px 20px 32px",
+            background: "#141414",
+            clipPath: cutPolygon,
+            borderRadius: "19px",
+            overflow: "hidden",
+          };
+          const iconBoxStyle: import("react").CSSProperties = {
+            height: "90px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+          };
+          const top = [
+            { icon: "/assets/home/icon-cctv-cam.png",   label: "Відеоспостереження",  w: 76, h: 52, href: "/services/video" },
+            { icon: "/assets/home/icon-access.png",     label: "Системи контролю доступу (СКД)",       w: 66, h: 79, href: "/services/access" },
+            { icon: "/assets/home/icon-solution.png",   label: "Структуровані кабельні системи (СКС)", w: 56, h: 68, href: "/services/scs" },
+            { icon: "/assets/home/icon-bug-search.png", label: "Захист інформації — пошук жучків", w: 76, h: 71, href: "/services/infosec" },
+          ];
+          const bottom = [
+            { icon: "/assets/home/icon-fire.png",  label: "Охоронно-пожежна сигналізація", w: 64, h: 77, href: "/services/fire" },
+            { icon: "/assets/home/icon-rapid.png", label: "Фізична охорона",               w: 96, h: 64, href: "/services/physical" },
+          ];
+          const bottom2 = [
+            { icon: "/assets/home/icon-fast.png", label: "Автоматизовані системи управління", w: 58, h: 58, href: "/services/automation" },
+            { icon: "/assets/home/icon-ai-protection.png", label: "Використання ШІ для захисту", w: 46, h: 58, href: "/services/ai-protection" },
+          ];
+          return (
+            <>
+              <div data-reveal data-delay="2" className="rsp-4tabs" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "20px", marginBottom: "20px" }}>
+                {top.map((card, i) => (
+                  <Link
+                    key={card.label}
+                    href={card.href}
+                    className="svc-card"
+                    style={{ ...outerStyle, clipPath: i === 1 ? "none" : cutPolygon, textDecoration: "none" }}
+                  >
+                    <div style={{ ...innerStyle, clipPath: i === 1 ? "none" : cutPolygon }}>
+                      <div style={iconBoxStyle}>
+                        <Image src={card.icon} alt={card.label} width={card.w} height={card.h} style={{ objectFit: "contain" }} />
+                      </div>
+                      <span style={{ fontSize: "13px", fontFamily: "Montserrat,sans-serif", fontWeight: 600, color: "#ccc", textAlign: "center", lineHeight: 1.4 }}>{card.label}</span>
+                    </div>
+                  </Link>
+                ))}
               </div>
-              <h4 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "15px", fontWeight: 700, color: "#fff", lineHeight: 1.3, marginBottom: "12px" }}>{svc.title}</h4>
-              <p style={{ fontSize: "13px", color: "#888", lineHeight: 1.6 }}>{svc.desc}</p>
-            </div>
-          ))}
-        </div>
-        <p style={{ textAlign: "center", fontSize: "13px", color: "#555", marginTop: "24px" }}>Додатково: захист інформації · тілоохоронці · розумний дім</p>
+              <div className="rsp-2tabs" style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "20px" }}>
+                {bottom.map((card, i) => (
+                  <Link
+                    key={card.label}
+                    href={card.href}
+                    className="svc-card"
+                    style={{
+                      ...outerStyle,
+                      clipPath: i === 0 ? cutPolygonBoth : cutPolygon,
+                      textDecoration: "none",
+                      flex: "none",
+                      width: i === 0 ? "calc((100% - 60px) / 4)" : "calc((100% - 60px) / 2 + 20px)",
+                    }}
+                  >
+                    <div style={{ ...innerStyle, clipPath: i === 0 ? cutPolygonBoth : cutPolygon }}>
+                      <div style={iconBoxStyle}>
+                        <Image src={card.icon} alt={card.label} width={card.w} height={card.h} style={{ objectFit: "contain" }} />
+                      </div>
+                      <span style={{ fontSize: "13px", fontFamily: "Montserrat,sans-serif", fontWeight: 600, color: "#ccc", textAlign: "center", lineHeight: 1.4 }}>{card.label}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <div className="rsp-2tabs" style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
+                {bottom2.map((card, i) => (
+                  <Link
+                    key={card.label}
+                    href={card.href}
+                    className="svc-card"
+                    style={{
+                      ...outerStyle,
+                      clipPath: i === 1 ? cutPolygonBoth : cutPolygon,
+                      textDecoration: "none",
+                      flex: "none",
+                      width: "calc((100% - 60px) / 4)",
+                    }}
+                  >
+                    <div style={{ ...innerStyle, clipPath: i === 1 ? cutPolygonBoth : cutPolygon }}>
+                      <div style={iconBoxStyle}>
+                        <Image src={card.icon} alt={card.label} width={card.w} height={card.h} style={{ objectFit: "contain" }} />
+                      </div>
+                      <span style={{ fontSize: "13px", fontFamily: "Montserrat,sans-serif", fontWeight: 600, color: "#ccc", textAlign: "center", lineHeight: 1.4 }}>{card.label}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </>
+          );
+        })()}
       </section>
 
       {/* ── CTA ── */}

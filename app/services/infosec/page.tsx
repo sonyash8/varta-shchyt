@@ -11,20 +11,20 @@ export default function InfosecPage() {
           <div>
             <div className="svc-title-wrap" style={{ marginBottom: "24px" }}>
               <div className="svc-icon-row" style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "36px" }}>
-                <Image src="/assets/home/svc-infosec.png" alt="" width={40} height={40} style={{ objectFit: "contain" }} />
+                <Image src="/assets/home/icon-bug-search.png" alt="" width={52} height={52} style={{ objectFit: "contain" }} />
                 <div style={{ flex: 1, height: "1px", background: "rgba(245,166,35,0.5)" }} />
               </div>
               <h1 className="svc-h1" style={{ fontFamily: "Montserrat,sans-serif", fontSize: "36px", fontWeight: 900, textTransform: "uppercase", color: "#fff", marginBottom: "0" }}>
-                ЗАХИСТ ІНФОРМАЦІЇ
+                ПОШУК ЖУЧКІВ ТА ЗАХИСТ ІНФОРМАЦІЇ
               </h1>
             </div>
 
             <div style={{ marginBottom: "36px" }}>
               <h2 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "14px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "12px", lineHeight: 1.4 }}>
-                ТЕХНІЧНИЙ ЗАХИСТ ДАНИХ<br />ТА КОНФІДЕНЦІЙНОСТІ
+                ЗАХИСТ ІНФОРМАЦІЇ ТА<br />ВИЯВЛЕННЯ ПРИХОВАНИХ ПРИСТРОЇВ
               </h2>
               <p style={{ fontSize: "13px", color: "#aaa", lineHeight: 1.75 }}>
-                Проводимо перевірку приміщень, офісів, авто та робочих зон на наявність прихованих пристроїв прослуховування, відеофіксації та інших засобів витоку інформації. Допомагаємо захистити конфіденційні дані бізнесу й приватних клієнтів.
+                Проводимо пошук жучків — прихованих пристроїв прослуховування, відеофіксації та стеження — у приміщеннях, офісах, авто та робочих зонах. Допомагаємо захистити конфіденційні дані бізнесу й приватних клієнтів.
               </p>
             </div>
 
@@ -93,6 +93,25 @@ export default function InfosecPage() {
               </div>
             </div>
 
+            <div style={{ marginBottom: "40px", background: "#141414", border: "1px solid rgba(245,166,35,0.35)", borderRadius: "16px", padding: "24px 28px" }}>
+              <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "10px" }}>
+                ЦИФРОВА БЕЗПЕКА
+              </h3>
+              <p style={{ fontSize: "13px", color: "#aaa", lineHeight: 1.75, marginBottom: "14px" }}>
+                Фізичний пошук жучків і прихованих пристроїв — лише частина безпеки. За цифровий захист (акаунти, дані, кіберзагрози) відповідає наша споріднена компанія{" "}
+                <strong style={{ color: "#fff", fontFamily: "Montserrat,sans-serif", fontWeight: 800, textTransform: "uppercase" }}>Vartalis</strong> — твій цифровий спокій.
+              </p>
+              <a
+                href="https://vartalis.com.ua"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-hover"
+                style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1px solid #555", borderRadius: "12px", padding: "8px 18px", fontSize: "12px", color: "#fff", fontFamily: "Montserrat,sans-serif", fontWeight: 600, textDecoration: "none" }}
+              >
+                vartalis.com.ua →
+              </a>
+            </div>
+
             <Link
               href="/contacts"
               className="btn-gold-hover"
@@ -107,7 +126,7 @@ export default function InfosecPage() {
             <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(245,166,35,0.2)" }}>
               <Image
                 src="/assets/home/svc-infosec-hero.png"
-                alt="Захист інформації"
+                alt="Пошук жучків"
                 width={600}
                 height={480}
                 style={{ objectFit: "cover", width: "100%", height: "auto", display: "block" }}

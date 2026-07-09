@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ScrollRevealInit />
         <Navbar />
-        <main>{children}</main>
+        <main style={{ paddingTop: "72px" }}>{children}</main>
         <Footer />
       </body>
     </html>
