@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Охоронно-пожежна сигналізація — Варта-Щит Україна",
+  description: "Монтаж, обслуговування та перевірка систем пожежної сигналізації й оповіщення.",
+};
 
 export default function FirePage() {
   return (

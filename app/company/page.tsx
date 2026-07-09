@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Про компанію — Варта-Щит Україна",
+  description: "Охоронна компанія Варта-Щит Україна: досвід, комплексний підхід і сучасні технології безпеки для бізнесу та приватних клієнтів у Києві.",
+};
 
 const ADVANTAGES = [
   { num: "15+", label: "років досвіду" },

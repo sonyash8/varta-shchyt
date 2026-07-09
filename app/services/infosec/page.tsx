@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Пошук жучків та захист інформації — Варта-Щит Україна",
+  description: "Пошук прихованих мікрофонів, камер і GPS-маячків, аудит інформаційної безпеки в Києві.",
+};
 
 export default function InfosecPage() {
   return (

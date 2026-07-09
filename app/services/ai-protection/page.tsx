@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Використання ШІ для захисту — Варта-Щит Україна",
+  description: "Розумний аналіз відео та миттєві сповіщення про реальні загрози за допомогою штучного інтелекту.",
+};
 
 export default function AiProtectionPage() {
   return (

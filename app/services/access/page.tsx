@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Системи контролю доступу (СКД) — Варта-Щит Україна",
+  description: "Обмеження доступу, облік робочого часу та контроль відвідувачів для офісів, підприємств і житлових комплексів.",
+};
 
 export default function AccessPage() {
   return (

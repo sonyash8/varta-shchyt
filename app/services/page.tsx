@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Послуги — Варта-Щит Україна",
+  description: "Відеоспостереження, СКД, СКС, пошук жучків, пожежна сигналізація, фізична охорона, автоматизація та ШІ-захист від Варта-Щит Україна.",
+};
 
 const MAIN_SERVICES = [
   { icon: "/assets/home/svc-video.png",    title: "Відеоспостереження",              desc: "Системи відеоконтролю для нагляду за об'єктом і фіксації подій.",             w: 58, h: 58, href: "/services/video" },

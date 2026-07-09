@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Відеоспостереження — Варта-Щит Україна",
+  description: "Проєктування та монтаж систем відеоспостереження для офісів, складів, будинків і територій у Києві.",
+};
 
 export default function VideoPage() {
   return (

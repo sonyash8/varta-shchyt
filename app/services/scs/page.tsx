@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Структуровані кабельні системи (СКС) — Варта-Щит Україна",
+  description: "Проєктування та монтаж кабельної інфраструктури для систем безпеки та мережі.",
+};
 
 export default function ScsPage() {
   return (

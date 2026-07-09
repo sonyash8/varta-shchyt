@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Автоматизовані системи управління — Варта-Щит Україна",
+  description: "Автоматика керує замість вас — охорона, доступ і клімат за заданим сценарієм.",
+};
 
 export default function AutomationPage() {
   return (

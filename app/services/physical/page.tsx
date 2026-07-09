@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Фізична охорона — Варта-Щит Україна",
+  description: "Особиста охорона, пости охорони та супровід вантажів для бізнесу та приватних клієнтів у Києві.",
+};
 
 export default function PhysicalPage() {
   return (
