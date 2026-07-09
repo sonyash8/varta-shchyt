@@ -4,10 +4,10 @@ import { useRef, useEffect, useState } from "react";
 const LINES   = ["ЗВ'ЯЖІТЬСЯ", "З НАМИ"];
 const FONT    = "900 64px Montserrat, sans-serif";
 const SAMPLE  = 2;
-const RADIUS  = 85;
-const REPEL   = 7;
-const SPRING  = 0.07;
-const FRICTION = 0.88;
+const RADIUS  = 60;
+const REPEL   = 4;
+const SPRING  = 0.12;
+const FRICTION = 0.8;
 
 interface P { ox:number; oy:number; x:number; y:number; vx:number; vy:number }
 

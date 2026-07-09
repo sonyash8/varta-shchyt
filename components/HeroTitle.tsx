@@ -4,10 +4,10 @@ import { useRef, useEffect } from "react";
 const LINES      = ["ВАРТА-ЩИТ", "УКРАЇНА"];
 const FONT       = "900 72px Montserrat, sans-serif";
 const SAMPLE     = 2;    // CSS px per particle — tiny so text looks normal at rest
-const RADIUS     = 85;   // cursor influence radius (px)
-const REPEL      = 7;    // gentle push — gradual scatter
-const SPRING     = 0.07; // pull-back strength
-const FRICTION   = 0.88; // high damping — slow smooth movement
+const RADIUS     = 60;   // cursor influence radius (px)
+const REPEL      = 4;    // gentle push — gradual scatter
+const SPRING     = 0.12; // pull-back strength
+const FRICTION   = 0.8;  // damping — prevents chaotic orbiting around cursor
 
 interface P { ox:number; oy:number; x:number; y:number; vx:number; vy:number }
 
