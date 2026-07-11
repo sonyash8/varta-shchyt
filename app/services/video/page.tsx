@@ -18,7 +18,7 @@ export default function VideoPage() {
           <div>
             {/* Title + icon row */}
             <div className="svc-title-wrap" style={{ marginBottom: "24px" }}>
-              <div className="svc-icon-row" style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "36px" }}>
+              <div className="svc-icon-row" style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px" }}>
                 <Image src="/assets/home/svc-video.png" alt="" width={48} height={48} style={{ objectFit: "contain" }} />
                 <div style={{ flex: 1, height: "1px", background: "rgba(245,166,35,0.5)" }} />
               </div>
@@ -28,7 +28,7 @@ export default function VideoPage() {
             </div>
 
             {/* Системи контролю */}
-            <div style={{ marginBottom: "36px" }}>
+            <div style={{ marginBottom: "22px" }}>
               <h2 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "14px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "12px", lineHeight: 1.4 }}>
                 СИСТЕМИ КОНТРОЛЮ<br />ДЛЯ ВАШОЇ БЕЗПЕКИ
               </h2>
@@ -38,7 +38,7 @@ export default function VideoPage() {
             </div>
 
             {/* Про послугу */}
-            <div style={{ marginBottom: "36px" }}>
+            <div style={{ marginBottom: "22px" }}>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "12px" }}>
                 ПРО ПОСЛУГУ
               </h3>
@@ -51,7 +51,7 @@ export default function VideoPage() {
             </div>
 
             {/* Що входить */}
-            <div style={{ marginBottom: "36px" }}>
+            <div style={{ marginBottom: "22px" }}>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "16px" }}>
                 ЩО ВХОДИТЬ У ПОСЛУГУ
               </h3>
@@ -70,8 +70,29 @@ export default function VideoPage() {
               </div>
             </div>
 
-            {/* Чому обирають */}
-            <div style={{ marginBottom: "36px" }}>
+            {/* CTA button */}
+            <Link
+              href="/contacts"
+              className="btn-gold-hover"
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#F5A623", color: "#000", fontFamily: "Montserrat,sans-serif", fontWeight: 700, fontSize: "12px", letterSpacing: "1px", padding: "14px 32px", borderRadius: "12px", textDecoration: "none", marginTop: "45px" }}
+            >
+              ОТРИМАТИ КОНСУЛЬТАЦІЮ →
+            </Link>
+          </div>
+
+          {/* RIGHT — image */}
+          <div data-reveal="right" className="rsp-svc-sticky" style={{ position: "sticky", top: "120px" }}>
+            <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(245,166,35,0.2)", marginBottom: "22px" }}>
+              <Image
+                src="/assets/home/svc-video-hero.png"
+                alt="Відеоспостереження"
+                width={600}
+                height={333}
+                style={{ objectFit: "cover", width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+
+            <div style={{ marginBottom: "22px" }}>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "12px" }}>
                 ЧОМУ ОБИРАЮТЬ НАС
               </h3>
@@ -86,36 +107,13 @@ export default function VideoPage() {
               </div>
             </div>
 
-            {/* Переваги */}
-            <div style={{ marginBottom: "40px" }}>
+            <div>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "12px" }}>
                 ПЕРЕВАГИ IP-ВІДЕОСПОСТЕРЕЖЕННЯ
               </h3>
               <p style={{ fontSize: "13px", color: "#aaa", lineHeight: 1.75 }}>
                 IP-камери забезпечують якісне зображення, деталізацію та можливість зручного онлайн-доступу. Такі системи підходять для об'єктів, де важлива чіткість картинки, контроль подій і швидкий доступ до записів. Ми допоможемо підібрати рішення, яке відповідатиме вашому бюджету, задачам і рівню безпеки.
               </p>
-            </div>
-
-            {/* CTA button */}
-            <Link
-              href="/contacts"
-              className="btn-gold-hover"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#F5A623", color: "#000", fontFamily: "Montserrat,sans-serif", fontWeight: 700, fontSize: "12px", letterSpacing: "1px", padding: "14px 32px", borderRadius: "12px", textDecoration: "none" }}
-            >
-              ОТРИМАТИ КОНСУЛЬТАЦІЮ →
-            </Link>
-          </div>
-
-          {/* RIGHT — image */}
-          <div data-reveal="right" className="rsp-svc-sticky" style={{ position: "sticky", top: "120px" }}>
-            <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(245,166,35,0.2)" }}>
-              <Image
-                src="/assets/home/svc-video-hero.png"
-                alt="Відеоспостереження"
-                width={600}
-                height={480}
-                style={{ objectFit: "cover", width: "100%", height: "auto", display: "block" }}
-              />
             </div>
           </div>
         </div>

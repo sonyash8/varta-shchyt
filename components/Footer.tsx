@@ -21,7 +21,7 @@ export default function Footer() {
               <span style={{ fontFamily: "Montserrat,sans-serif", fontSize: "11px", fontWeight: 400, color: "#aaa" }}>Україна</span>
             </div>
           </Link>
-          <p className="footer-logo-desc" style={{ fontSize: "13px", color: "#666", lineHeight: 1.7, margin: "0 0 16px" }}>
+          <p className="footer-logo-desc" style={{ fontSize: "13px", color: "#666", lineHeight: 1.7, margin: "0 0 26px" }}>
             Забезпечуємо надійний захист бізнесу, майна та життя. Працюємо для вашої безпеки 24/7.
           </p>
           <div style={{ display: "flex", gap: "10px" }}>
@@ -39,21 +39,19 @@ export default function Footer() {
           <h5 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#F5A623", marginBottom: "20px", textTransform: "uppercase" }}>ПОСЛУГИ</h5>
           <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
             {[
-              { label: "Відеоспостереження", href: "/services/video" },
               { label: "Захист інформації — пошук жучків", href: "/services/infosec" },
+              { label: "Відеоспостереження", href: "/services/video" },
               { label: "Охоронно-пожежна сигналізація", href: "/services/fire" },
               { label: "Фізична охорона", href: "/services/physical" },
-              { label: "Автоматизовані системи управління", href: "/services/automation" },
-              { label: "Використання ШІ для захисту", href: "/services/ai-protection" },
+              { label: "Структуровані кабельні системи", href: "/services/scs" },
+              { label: "Системи контролю доступу", href: "/services/access" },
             ].map(item => (
               <li key={item.label} style={{ marginBottom: "10px" }}>
                 <Link href={item.href} className="footer-link" style={{ color: "#666", textDecoration: "none", fontSize: "13px" }}>{item.label}</Link>
               </li>
             ))}
-            <li style={{ marginBottom: "10px", display: "flex", gap: "6px" }}>
-              <Link href="/services/scs" className="footer-link" style={{ color: "#666", textDecoration: "none", fontSize: "13px" }}>СКС</Link>
-              <span style={{ color: "#666", fontSize: "13px" }}>/</span>
-              <Link href="/services/access" className="footer-link" style={{ color: "#666", textDecoration: "none", fontSize: "13px" }}>СКД</Link>
+            <li>
+              <Link href="/services" className="footer-link" style={{ color: "#666", textDecoration: "none", fontSize: "13px" }}>Усі послуги</Link>
             </li>
           </ul>
         </div>
@@ -77,7 +75,7 @@ export default function Footer() {
         {/* Контакти */}
         <div className="footer-col-contacts">
           <h5 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", color: "#F5A623", marginBottom: "20px", textTransform: "uppercase" }}>КОНТАКТИ</h5>
-          <div className="footer-contacts-grid" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <div className="footer-contacts-grid" style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             <div style={{ color: "#666", fontSize: "13px", lineHeight: 1.5 }}>04119, м. Київ, вул. Зоологічна, буд. 4-а, оф. 139/2</div>
             <div style={{ color: "#666", fontSize: "13px", lineHeight: 1.5 }}>vartasecurity@gmail.com</div>
             <div style={{ color: "#666", fontSize: "13px", lineHeight: 1.5 }}>+38 (067) 777-85-10<br />+38 (050) 777-85-11</div>

@@ -27,7 +27,7 @@ export default function CompanyPage() {
           style={{ objectFit: "cover", objectPosition: "center center" }}
         />
         {/* overlays */}
-        <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.05) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0) 75%)" }} />
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "200px", zIndex: 1, background: "linear-gradient(to top, #0d0d0d 0%, transparent 100%)" }} />
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "100px", zIndex: 1, background: "linear-gradient(to bottom, rgba(13,13,13,0.4) 0%, transparent 100%)" }} />
 
@@ -86,7 +86,7 @@ export default function CompanyPage() {
           <div>
             <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "14px", fontWeight: 700, letterSpacing: "2px", color: "#F5A623", textTransform: "uppercase", marginBottom: "20px" }}>ЩО МИ ЗАБЕЗПЕЧУЄМО</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-              {["Відеоспостереження", "СКД", "СКС", "Захист інформації", "Охоронно-пожежна сигналізація", "Автоматизовані системи управління", "Використання ШІ для захисту"].map((item) => (
+              {["Захист інформації — пошук жучків", "Відеоспостереження", "Системи контролю доступу", "Структуровані кабельні системи", "Охоронно-пожежна сигналізація", "Автоматизовані системи управління", "Використання ШІ для захисту"].map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "14px", color: "#ccc" }}>
                   <span style={{ color: "#F5A623", fontFamily: "monospace" }}>├</span>
                   {item}

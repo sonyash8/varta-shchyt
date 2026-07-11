@@ -16,7 +16,7 @@ export default function PhysicalPage() {
           {/* LEFT */}
           <div>
             <div className="svc-title-wrap" style={{ marginBottom: "24px" }}>
-              <div className="svc-icon-row" style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "36px" }}>
+              <div className="svc-icon-row" style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px" }}>
                 <Image src="/assets/home/svc-physical.png" alt="" width={52} height={52} style={{ objectFit: "contain" }} />
                 <div style={{ flex: 1, height: "1px", background: "rgba(245,166,35,0.5)" }} />
               </div>
@@ -25,7 +25,7 @@ export default function PhysicalPage() {
               </h1>
             </div>
 
-            <div style={{ marginBottom: "36px" }}>
+            <div style={{ marginBottom: "22px" }}>
               <h2 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "14px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "12px", lineHeight: 1.4 }}>
                 ЗАХИСТ ОБ'ЄКТІВ<br />ТА КОНТРОЛЬ БЕЗПЕКИ
               </h2>
@@ -34,7 +34,7 @@ export default function PhysicalPage() {
               </p>
             </div>
 
-            <div style={{ marginBottom: "36px" }}>
+            <div style={{ marginBottom: "22px" }}>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "12px" }}>
                 ПРО ПОСЛУГУ
               </h3>
@@ -46,7 +46,7 @@ export default function PhysicalPage() {
               </p>
             </div>
 
-            <div style={{ marginBottom: "36px" }}>
+            <div style={{ marginBottom: "22px" }}>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "16px" }}>
                 ЩО ВХОДИТЬ У ПОСЛУГУ
               </h3>
@@ -66,7 +66,28 @@ export default function PhysicalPage() {
               </div>
             </div>
 
-            <div style={{ marginBottom: "36px" }}>
+            <Link
+              href="/contacts"
+              className="btn-gold-hover"
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#F5A623", color: "#000", fontFamily: "Montserrat,sans-serif", fontWeight: 700, fontSize: "12px", letterSpacing: "1px", padding: "14px 32px", borderRadius: "12px", textDecoration: "none", marginTop: "45px" }}
+            >
+              ОТРИМАТИ КОНСУЛЬТАЦІЮ →
+            </Link>
+          </div>
+
+          {/* RIGHT */}
+          <div data-reveal="right" className="rsp-svc-sticky" style={{ position: "sticky", top: "120px" }}>
+            <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(245,166,35,0.2)", marginBottom: "22px" }}>
+              <Image
+                src="/assets/home/svc-physical-hero.png"
+                alt="Фізична охорона"
+                width={600}
+                height={320}
+                style={{ objectFit: "cover", width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+
+            <div style={{ marginBottom: "22px" }}>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "16px" }}>
                 ДЛЯ ЯКИХ ОБ'ЄКТІВ
               </h3>
@@ -86,7 +107,7 @@ export default function PhysicalPage() {
               </div>
             </div>
 
-            <div style={{ marginBottom: "40px" }}>
+            <div>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "16px" }}>
                 ЧОМУ ОБИРАЮТЬ НАС
               </h3>
@@ -105,27 +126,52 @@ export default function PhysicalPage() {
                 ))}
               </div>
             </div>
-
-            <Link
-              href="/contacts"
-              className="btn-gold-hover"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#F5A623", color: "#000", fontFamily: "Montserrat,sans-serif", fontWeight: 700, fontSize: "12px", letterSpacing: "1px", padding: "14px 32px", borderRadius: "12px", textDecoration: "none" }}
-            >
-              ОТРИМАТИ КОНСУЛЬТАЦІЮ →
-            </Link>
           </div>
+        </div>
+      </section>
 
-          {/* RIGHT */}
-          <div data-reveal="right" className="rsp-svc-sticky" style={{ position: "sticky", top: "120px" }}>
-            <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(245,166,35,0.2)" }}>
-              <Image
-                src="/assets/home/svc-physical-hero.png"
-                alt="Фізична охорона"
-                width={600}
-                height={480}
-                style={{ objectFit: "cover", width: "100%", height: "auto", display: "block" }}
-              />
-            </div>
+      {/* ── НАПРЯМКИ ФІЗИЧНОЇ ОХОРОНИ ── */}
+      <section className="rsp-sec-b" style={{ padding: "0 40px 72px" }}>
+        <div
+          data-reveal
+          style={{ position: "relative", border: "0.5px solid rgba(245,166,35,0.6)", borderRadius: "16px", padding: "48px 40px 40px", marginTop: "20px" }}
+        >
+          <h2 style={{
+            position: "absolute",
+            top: "-20px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: "#0d0d0d",
+            padding: "0 28px",
+            fontFamily: "Montserrat,sans-serif",
+            fontSize: "26px",
+            fontWeight: 800,
+            textTransform: "uppercase",
+            color: "#fff",
+            whiteSpace: "nowrap",
+          }}>НАПРЯМКИ ОХОРОНИ</h2>
+
+          <div className="rsp-physical" style={{ display: "flex", alignItems: "stretch" }}>
+            {[
+              { icon: "/assets/home/svc-personal.png", title: "Особиста охорона",  desc: "Захист життя та здоров'я клієнтів у будь-яких умовах.",    w: 48, h: 48 },
+              { icon: "/assets/home/svc-post.png",     title: "Пост охорони",      desc: "Організація та забезпечення контролю доступу на об'єкти.", w: 76, h: 76 },
+              { icon: "/assets/home/svc-cargo.png",    title: "Супровід вантажів", desc: "Надійний супровід та охорона вантажів у дорозі.",          w: 76, h: 76 },
+            ].map((svc, i, arr) => (
+              <div key={svc.title} style={{ display: "contents" }}>
+                <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "10px", padding: "20px 24px" }}>
+                  <div style={{ width: "56px", height: "56px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Image src={svc.icon} alt={svc.title} width={svc.w} height={svc.h} style={{ objectFit: "contain" }} />
+                  </div>
+                  <div style={{ textAlign: "center", flex: 1 }}>
+                    <h4 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "15px", fontWeight: 700, color: "#fff", marginBottom: "8px" }}>{svc.title}</h4>
+                    <p style={{ fontSize: "13px", color: "#666", lineHeight: 1.65 }}>{svc.desc}</p>
+                  </div>
+                </div>
+                {i < arr.length - 1 && (
+                  <div className="rsp-hide" style={{ width: "1px", background: "rgba(245,166,35,0.4)", flexShrink: 0 }} />
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>

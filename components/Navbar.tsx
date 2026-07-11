@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
 
 const SERVICES_LIST = [
+  { href: "/services/infosec",       label: "Захист інформації — пошук жучків" },
   { href: "/services/video",         label: "Відеоспостереження" },
   { href: "/services/access",        label: "Системи контролю доступу (СКД)" },
   { href: "/services/scs",           label: "Структуровані кабельні системи (СКС)" },
-  { href: "/services/infosec",       label: "Захист інформації — пошук жучків" },
   { href: "/services/fire",          label: "Охоронно-пожежна сигналізація" },
   { href: "/services/physical",      label: "Фізична охорона" },
   { href: "/services/automation",    label: "Автоматизовані системи управління" },
@@ -142,13 +142,16 @@ export default function Navbar() {
         {/* Desktop phone */}
         <Link
           href="/contacts"
-          className="nav-phone-desktop"
+          className="nav-phone-desktop btn-hover"
           style={{
             textDecoration: "none",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             gap: "2px",
+            border: "1px solid rgba(245,166,35,0.35)",
+            borderRadius: "12px",
+            padding: "8px 20px",
           }}
         >
           <span style={{ fontSize: "9px", color: "#888", letterSpacing: "1px", fontFamily: "Montserrat,sans-serif", textTransform: "uppercase" }}>ОТРИМАТИ КОНСУЛЬТАЦІЮ</span>

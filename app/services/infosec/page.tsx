@@ -15,8 +15,8 @@ export default function InfosecPage() {
 
           {/* LEFT */}
           <div>
-            <div className="svc-title-wrap" style={{ marginBottom: "24px" }}>
-              <div className="svc-icon-row" style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "36px" }}>
+            <div className="svc-title-wrap" style={{ marginBottom: "40px" }}>
+              <div className="svc-icon-row" style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "22px" }}>
                 <Image src="/assets/home/icon-bug-search.png" alt="" width={52} height={52} style={{ objectFit: "contain" }} />
                 <div style={{ flex: 1, height: "1px", background: "rgba(245,166,35,0.5)" }} />
               </div>
@@ -25,7 +25,7 @@ export default function InfosecPage() {
               </h1>
             </div>
 
-            <div style={{ marginBottom: "36px" }}>
+            <div style={{ marginBottom: "22px" }}>
               <h2 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "14px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "12px", lineHeight: 1.4 }}>
                 ЗАХИСТ ІНФОРМАЦІЇ ТА<br />ВИЯВЛЕННЯ ПРИХОВАНИХ ПРИСТРОЇВ
               </h2>
@@ -34,7 +34,7 @@ export default function InfosecPage() {
               </p>
             </div>
 
-            <div style={{ marginBottom: "36px" }}>
+            <div style={{ marginBottom: "22px" }}>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "12px" }}>
                 ПРО ПОСЛУГУ
               </h3>
@@ -46,7 +46,7 @@ export default function InfosecPage() {
               </p>
             </div>
 
-            <div style={{ marginBottom: "36px" }}>
+            <div style={{ marginBottom: "22px" }}>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "16px" }}>
                 ЩО ВХОДИТЬ У ПОСЛУГУ
               </h3>
@@ -65,7 +65,28 @@ export default function InfosecPage() {
               </div>
             </div>
 
-            <div style={{ marginBottom: "36px" }}>
+            <Link
+              href="/contacts"
+              className="btn-gold-hover"
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#F5A623", color: "#000", fontFamily: "Montserrat,sans-serif", fontWeight: 700, fontSize: "12px", letterSpacing: "1px", padding: "14px 32px", borderRadius: "12px", textDecoration: "none", marginTop: "45px" }}
+            >
+              ОТРИМАТИ КОНСУЛЬТАЦІЮ →
+            </Link>
+          </div>
+
+          {/* RIGHT — image */}
+          <div data-reveal="right" className="rsp-svc-sticky" style={{ position: "sticky", top: "120px" }}>
+            <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(245,166,35,0.2)", marginBottom: "22px" }}>
+              <Image
+                src="/assets/home/svc-infosec-hero.png"
+                alt="Пошук жучків"
+                width={600}
+                height={324}
+                style={{ objectFit: "cover", width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+
+            <div style={{ marginBottom: "22px" }}>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "16px" }}>
                 ЧОМУ ОБИРАЮТЬ НАС
               </h3>
@@ -84,7 +105,7 @@ export default function InfosecPage() {
               </div>
             </div>
 
-            <div style={{ marginBottom: "40px" }}>
+            <div style={{ marginBottom: "22px" }}>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "12px" }}>
                 КОМУ ЦЕ ПОТРІБНО
               </h3>
@@ -99,7 +120,7 @@ export default function InfosecPage() {
               </div>
             </div>
 
-            <div style={{ marginBottom: "40px", background: "#141414", border: "1px solid rgba(245,166,35,0.35)", borderRadius: "16px", padding: "24px 28px" }}>
+            <div style={{ background: "#141414", border: "1px solid rgba(245,166,35,0.35)", borderRadius: "16px", padding: "24px 28px" }}>
               <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", color: "#F5A623", letterSpacing: "1px", marginBottom: "10px" }}>
                 ЦИФРОВА БЕЗПЕКА
               </h3>
@@ -116,27 +137,6 @@ export default function InfosecPage() {
               >
                 vartalis.com.ua →
               </a>
-            </div>
-
-            <Link
-              href="/contacts"
-              className="btn-gold-hover"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#F5A623", color: "#000", fontFamily: "Montserrat,sans-serif", fontWeight: 700, fontSize: "12px", letterSpacing: "1px", padding: "14px 32px", borderRadius: "12px", textDecoration: "none" }}
-            >
-              ОТРИМАТИ КОНСУЛЬТАЦІЮ →
-            </Link>
-          </div>
-
-          {/* RIGHT — image */}
-          <div data-reveal="right" className="rsp-svc-sticky" style={{ position: "sticky", top: "120px" }}>
-            <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(245,166,35,0.2)" }}>
-              <Image
-                src="/assets/home/svc-infosec-hero.png"
-                alt="Пошук жучків"
-                width={600}
-                height={480}
-                style={{ objectFit: "cover", width: "100%", height: "auto", display: "block" }}
-              />
             </div>
           </div>
         </div>
