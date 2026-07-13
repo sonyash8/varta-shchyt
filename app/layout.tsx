@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollRevealInit from "@/components/ScrollRevealInit";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
@@ -101,6 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <ScrollRevealInit />
+        <ScrollProgress />
         <Navbar />
         <main style={{ paddingTop: "72px" }}>{children}</main>
         <Footer />

@@ -475,20 +475,91 @@ textarea::placeholder {
   text-decoration-color: #F5A623 !important;
 }
 
-/* Service cards — золотий контур підсвічується при наведенні */
+/* Service cards — дизайн як у концепті */
 .svc-card {
-  transition: background 0.35s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease;
+  background: #2a2a26 !important;   /* тонкий темний контур замість помаранчевого */
+  box-shadow: none !important;
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+  will-change: transform;
+  overflow: hidden;
 }
-.svc-card > div {
-  transition: background 0.35s ease;
+/* контур загорається з лівого кута і плавно згасає — рівномірне 1px кільце */
+.svc-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(245,166,35,0.9) 0%, rgba(245,166,35,0) 55%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+  z-index: 2;
 }
 .svc-card:hover {
-  background: rgba(245, 166, 35, 0.95) !important;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(245, 166, 35, 0.12);
+  transform: translateY(-7px);
 }
-.svc-card:hover > div {
-  background: linear-gradient(to top, rgba(245,166,35,0.12) 0%, transparent 18%), #141414 !important;
+.svc-card:hover::before {
+  opacity: 1;
+}
+/* точкове світіння у правому куті */
+.svc-card > div::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  top: -90px;
+  right: -90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,166,35,0.12), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+.svc-card:hover > div::after {
+  opacity: 1;
+}
+/* світна лінія на зрізаному куточку (картки зі зрізом зверху зліва) */
+.rsp-4tabs + .rsp-2tabs > .svc-card:first-child::after,
+.rsp-4tabs + .rsp-2tabs + .rsp-2tabs > .svc-card:last-child::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(245,166,35,0.85);
+  clip-path: polygon(0 26px, 26px 0, 26.8px 0.8px, 0.8px 26.8px);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+.rsp-4tabs + .rsp-2tabs > .svc-card:first-child:hover::after,
+.rsp-4tabs + .rsp-2tabs + .rsp-2tabs > .svc-card:last-child:hover::after {
+  opacity: 1;
+}
+
+/* контур і підложка для іконки */
+.svc-card > div > div:first-child {
+  height: 72px !important;
+  border: 1px solid rgba(245,166,35,0.18);
+  background: rgba(245,166,35,0.07);
+  border-radius: 16px;
+  padding: 12px 16px;
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), box-shadow 0.45s ease, border-color 0.45s ease;
+}
+.svc-card img {
+  width: auto !important;
+  height: auto !important;
+  max-height: 44px;
+  max-width: 60px;
+}
+/* легке світіння іконки при наведенні */
+.svc-card:hover > div > div:first-child {
+  transform: scale(1.06) rotate(-3deg);
+  border-color: rgba(245,166,35,0.45);
+  box-shadow: 0 0 26px rgba(245,166,35,0.3), inset 0 0 18px rgba(245,166,35,0.08);
 }
 
 /* Navbar "Послуги" dropdown */
@@ -508,6 +579,14 @@ textarea::placeholder {
   transform: translateY(-4px);
   border-color: rgba(245, 166, 35, 0.9) !important;
   box-shadow: 0 10px 24px rgba(245, 166, 35, 0.12);
+}
+
+/* Фізична охорона — легкий фоновий прямокутник при наведенні */
+.svc-bottom-underline {
+  transition: background 0.35s ease;
+}
+.svc-bottom-underline:hover {
+  background: rgba(245, 166, 35, 0.05);
 }
 
 /* Фізична охорона — тільки лінія знизу при наведенні */

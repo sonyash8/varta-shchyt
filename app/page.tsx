@@ -302,18 +302,18 @@ export default function HomePage() {
             flexShrink: 0,
           };
           const top = [
-            { icon: "/assets/home/icon-cctv-cam.png",   label: "Відеоспостереження",  w: 76, h: 52, href: "/services/video" },
-            { icon: "/assets/home/icon-access.png",     label: "Системи контролю доступу (СКД)",       w: 66, h: 79, href: "/services/access" },
-            { icon: "/assets/home/icon-solution.png",   label: "Структуровані кабельні системи (СКС)", w: 56, h: 68, href: "/services/scs" },
-            { icon: "/assets/home/icon-bug-search.png", label: "Захист інформації — пошук жучків", w: 76, h: 71, href: "/services/infosec" },
+            { icon: "/assets/home/icon-cctv-cam.png",   label: "Відеоспостереження",  desc: "Системи відеоконтролю для нагляду за об'єктом і фіксації подій.", w: 76, h: 52, href: "/services/video" },
+            { icon: "/assets/home/icon-access.png",     label: "Системи контролю доступу (СКД)",       desc: "Обмеження доступу, облік робочого часу та контроль відвідувачів.", w: 66, h: 79, href: "/services/access" },
+            { icon: "/assets/home/icon-solution.png",   label: "Структуровані кабельні системи (СКС)", desc: "Проєктування та монтаж кабельної інфраструктури для систем безпеки.", w: 56, h: 68, href: "/services/scs" },
+            { icon: "/assets/home/icon-bug-search.png", label: "Захист інформації — пошук жучків", desc: "Виявлення прихованих мікрофонів, камер і GPS-маячків, аудит безпеки даних.", w: 76, h: 71, href: "/services/infosec" },
           ];
           const bottom = [
-            { icon: "/assets/home/icon-fire.png",  label: "Охоронно-пожежна сигналізація", w: 64, h: 77, href: "/services/fire" },
-            { icon: "/assets/home/icon-rapid.png", label: "Фізична охорона",               w: 96, h: 64, href: "/services/physical" },
+            { icon: "/assets/home/icon-fire.png",  label: "Охоронно-пожежна сигналізація", desc: "Виявлення загроз і миттєве сповіщення про небезпеку.", w: 64, h: 77, href: "/services/fire" },
+            { icon: "/assets/home/icon-rapid.png", label: "Фізична охорона",               desc: "Пости охорони, особиста охорона та супровід вантажів.", w: 96, h: 64, href: "/services/physical" },
           ];
           const bottom2 = [
-            { icon: "/assets/home/icon-fast.png", label: "Автоматизовані системи управління", w: 58, h: 58, href: "/services/automation" },
-            { icon: "/assets/home/icon-ai-protection.png", label: "Використання ШІ для захисту", w: 46, h: 58, href: "/services/ai-protection" },
+            { icon: "/assets/home/icon-fast.png", label: "Автоматизовані системи управління", desc: "Автоматика керує замість вас — охорона, доступ і клімат за сценарієм.", w: 58, h: 58, href: "/services/automation" },
+            { icon: "/assets/home/icon-ai-protection.png", label: "Використання ШІ для захисту", desc: "Розумний аналіз відео та миттєві сповіщення про реальні загрози.", w: 46, h: 58, href: "/services/ai-protection" },
           ];
           return (
             <>
@@ -330,6 +330,7 @@ export default function HomePage() {
                         <Image src={card.icon} alt={card.label} width={card.w} height={card.h} style={{ objectFit: "contain" }} />
                       </div>
                       <span style={{ fontSize: "13px", fontFamily: "Montserrat,sans-serif", fontWeight: 600, color: "#ccc", textAlign: "center", lineHeight: 1.4 }}>{card.label}</span>
+                      <p style={{ fontSize: "12px", color: "#888", textAlign: "center", lineHeight: 1.65, margin: 0, maxWidth: "280px" }}>{card.desc}</p>
                     </div>
                   </Link>
                 ))}
@@ -353,6 +354,7 @@ export default function HomePage() {
                         <Image src={card.icon} alt={card.label} width={card.w} height={card.h} style={{ objectFit: "contain" }} />
                       </div>
                       <span style={{ fontSize: "13px", fontFamily: "Montserrat,sans-serif", fontWeight: 600, color: "#ccc", textAlign: "center", lineHeight: 1.4 }}>{card.label}</span>
+                      <p style={{ fontSize: "12px", color: "#888", textAlign: "center", lineHeight: 1.65, margin: 0, maxWidth: "280px" }}>{card.desc}</p>
                     </div>
                   </Link>
                 ))}
@@ -376,6 +378,7 @@ export default function HomePage() {
                         <Image src={card.icon} alt={card.label} width={card.w} height={card.h} style={{ objectFit: "contain" }} />
                       </div>
                       <span style={{ fontSize: "13px", fontFamily: "Montserrat,sans-serif", fontWeight: 600, color: "#ccc", textAlign: "center", lineHeight: 1.4 }}>{card.label}</span>
+                      <p style={{ fontSize: "12px", color: "#888", textAlign: "center", lineHeight: 1.65, margin: 0, maxWidth: "280px" }}>{card.desc}</p>
                     </div>
                   </Link>
                 ))}
